@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -148,5 +150,60 @@ public class ActivityOne extends AppCompatActivity {
             eTxtName.setText(name);
             eTxtPhone.setText(phone);
         }
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+
+        // Explict Way
+                 // groupId , itemId, order, title
+        /*menu.add(1,101,0,"All Songs");
+        menu.add(1,102,0,"Artists");
+        menu.add(2,201,0,"Recently Played");
+        menu.add(2,202,0,"Favourites");*/
+
+        // Implict Way | IOC (Inversion Of Control)
+
+        getMenuInflater().inflate(R.menu.menu_activityone,menu);
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        //int gid = item.getGroupId();
+        int id = item.getItemId(); // fetch the id on which user has done selection
+
+        /*switch (id){
+            case 101:
+                Toast.makeText(this,"You Selected All Songs",Toast.LENGTH_LONG).show();
+                break;
+            case 102:
+                Intent intent = new Intent(ActivityOne.this,ActivityTwo.class);
+                startActivity(intent);
+                break;
+            case 201:
+
+                break;
+            case 202:
+
+                break;
+        }*/
+
+        switch (id){
+            case R.id.allSongs:
+                Toast.makeText(this,"You Selected All Songs",Toast.LENGTH_LONG).show();
+                break;
+            case R.id.lib:
+                Intent intent = new Intent(ActivityOne.this,ActivityTwo.class);
+                startActivity(intent);
+                break;
+
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

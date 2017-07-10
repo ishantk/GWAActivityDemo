@@ -24,7 +24,8 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".ActivityThree"></activity>
+        <activity android:name=".ActivityThree" />
+        <activity android:name=".ViewsActivity"></activity>
     </application>
 
 </manifest>

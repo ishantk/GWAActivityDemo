@@ -12,6 +12,9 @@
     <item android:id="@+id/artist"
         android:title="Artists"/>
 
+    <item android:id="@+id/views"
+        android:title="ViewsActivity"/>
+
     <item android:id="@+id/lib"
         android:title="Library"
         android:icon="@android:drawable/ic_menu_search"

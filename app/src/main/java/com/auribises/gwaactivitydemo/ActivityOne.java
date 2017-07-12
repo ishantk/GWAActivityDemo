@@ -1,5 +1,6 @@
 package com.auribises.gwaactivitydemo;
 
+import android.app.NotificationManager;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,6 +15,7 @@ public class ActivityOne extends AppCompatActivity {
 
 
     EditText eTxtName,eTxtPhone;
+    NotificationManager notificationManager;
 
 
     // Life Cycle of an Activity
@@ -28,6 +30,9 @@ public class ActivityOne extends AppCompatActivity {
         System.out.println("ActivityOne - onCreate");
         Log.i("ActivityOne","onCreate");
         Toast.makeText(this,"ActivityOne - onCreate",Toast.LENGTH_LONG).show();
+
+        notificationManager = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
+        notificationManager.cancel(101);
     }
 
 

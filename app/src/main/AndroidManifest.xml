@@ -31,13 +31,9 @@
         <activity android:name=".MyListActivity" />
         <activity android:name=".NewsActivity" />
         <activity android:name=".CustomAdapterActivity" />
-        <activity android:name=".MyLocationActivity"></activity>
+        <activity android:name=".MyLocationActivity" />
         <activity android:name=".MySensorActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <receiver
@@ -54,6 +50,14 @@
                 <action android:name="android.intent.action.LOCALE_CHANGED" />
             </intent-filter>
         </receiver>
+
+        <activity android:name=".FragmentsDemoActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

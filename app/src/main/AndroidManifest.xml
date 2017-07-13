@@ -3,11 +3,11 @@
     package="com.auribises.gwaactivitydemo">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-
-    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -28,18 +28,32 @@
         <activity android:name=".ActivityThree" />
         <activity android:name=".ViewsActivity" />
         <activity android:name=".CardActivity" />
-        <activity android:name=".MyListActivity"></activity>
+        <activity android:name=".MyListActivity" />
         <activity android:name=".NewsActivity" />
-        <activity android:name=".CustomAdapterActivity">
-
-        </activity>
-        <activity android:name=".MyLocationActivity">
+        <activity android:name=".CustomAdapterActivity" />
+        <activity android:name=".MyLocationActivity"></activity>
+        <activity android:name=".MySensorActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <receiver
+            android:name=".MyReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="a.b.c.d" />
+                <action android:name="android.intent.action.BATTERY_LOW" />
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+                <action android:name="android.intent.action.SCREEN_ON" />
+                <action android:name="android.intent.action.PHONE_STATE" />
+                <action android:name="android.intent.action.LOCALE_CHANGED" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

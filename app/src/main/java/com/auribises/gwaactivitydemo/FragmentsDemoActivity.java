@@ -20,6 +20,8 @@ public class FragmentsDemoActivity extends AppCompatActivity {
         fragmentManager.beginTransaction().add(R.id.lowerFrame,lowerFragment).commit();
     }
 
+    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
